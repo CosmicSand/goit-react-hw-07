@@ -29,7 +29,7 @@ const contactsSlice = createSlice({
   },
   extraReducers: (bilder) => {
     bilder
-      .addCase(fetchContacts.pending, (state, action) => {
+      .addCase(fetchContacts.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchContacts.fulfilled, (state, action) => {
