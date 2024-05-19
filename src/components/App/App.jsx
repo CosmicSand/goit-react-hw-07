@@ -7,7 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 function App() {
-  const contacts = useSelector((state) => state.loading);
+  const isLoading = useSelector((state) => state.loading);
+  const isError = useSelector((state) => state.error);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -17,9 +18,9 @@ function App() {
   return (
     <div className={css.container}>
       <h1 className={css.header}>Phonebook</h1>
-      <ContactForm />
+      {!isLoading && !isError && <ContactForm />}
       <SearchBox />
-      <ContactList contacts={contacts} />
+      <ContactList />
     </div>
   );
 }
