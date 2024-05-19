@@ -6,15 +6,15 @@ import { selectFiltersName } from "../../redux/filtersSlice";
 function ContactList() {
   const contacts = useSelector(selectFiltersName);
   return (
-    <div className={css.container}>
-      <ul className={css.list}>
-        {contacts.map((contact) => (
+    <ul className={css.list}>
+      {contacts
+        .toSorted((a, b) => a.name.localeCompare(b.name))
+        .map((contact) => (
           <li className={css.item} key={contact.id}>
             <Contact contactInfo={contact} />
           </li>
         ))}
-      </ul>
-    </div>
+    </ul>
   );
 }
 

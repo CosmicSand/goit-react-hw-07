@@ -39,6 +39,3 @@
 .item:hover {
   border-color: yellow;
 }
-.container {
-  min-height: 100vh;
-}
