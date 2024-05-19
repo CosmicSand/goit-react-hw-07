@@ -16,13 +16,15 @@ function ContactList() {
   });
 
   return (
-    <ul className={css.list}>
-      {contacts.map((contact) => (
-        <li className={css.item} key={contact.id}>
-          <Contact contactInfo={contact} />
-        </li>
-      ))}
-    </ul>
+    <div className={css.container}>
+      <ul className={css.list}>
+        {contacts.map((contact) => (
+          <li className={css.item} key={contact.id}>
+            <Contact contactInfo={contact} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
