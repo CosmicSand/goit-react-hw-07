@@ -12,7 +12,6 @@ import css from "./App.module.css";
 function App() {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  console.log(isError);
 
   const dispatch = useDispatch();
   useEffect(() => {

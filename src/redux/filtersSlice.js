@@ -17,7 +17,6 @@ export const selectFilters = (state) => state.filters.name;
 export const selectFiltersName = createSelector(
   [selectFilters, selectContacts],
   (selectFilters, selectContactList) => {
-    console.log("brrr");
     if (!selectFilters) {
       return selectContactList;
     } else {
